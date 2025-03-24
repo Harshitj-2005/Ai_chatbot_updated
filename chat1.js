@@ -9,7 +9,7 @@ dotenv.config();
 
 const API_KEY = process.env.GEMINI_API_KEY;
 if (!API_KEY) {
-    console.error(chalk.red("❌ Error: Missing API key. Set GEMINI_API_KEY in .env file."));
+    console.error(chalk.red("Error: Missing API key. Set GEMINI_API_KEY in .env file."));
     process.exit(1);
 }
 
@@ -51,13 +51,13 @@ async function saveChatToDB(prompt, response) {
 }
 
 async function startChat() {
-    console.log(chalk.blue("🚀 Hi Harshit, chat with Gemini AI! Type 'exit' to stop."));
+    console.log(chalk.blue("Hi Harshit, chat with Gemini AI! Type 'exit' to stop."));
     
     while (true) {
         const userInput = readlineSync.question(chalk.cyan("You: "));
 
         if (userInput.toLowerCase() === "exit") {
-            console.log(chalk.yellow("👋 Goodbye!"));
+            console.log(chalk.yellow("Goodbye!"));
             break;
         }
 
